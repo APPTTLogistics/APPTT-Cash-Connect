@@ -7,7 +7,7 @@ $(document).ready(function() {
         infinite: true,
         speed: 1001,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         fade: true,
         cssEase: 'linear',
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
@@ -78,4 +78,14 @@ $(document).ready(function() {
             $('.blue-logo').hide();
         }
     });
-});
+
+window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+  });
