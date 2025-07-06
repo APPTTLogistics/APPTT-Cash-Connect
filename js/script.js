@@ -7,7 +7,7 @@ $(document).ready(function() {
         infinite: true,
         speed: 1001,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 4000,
         fade: true,
         cssEase: 'linear',
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
@@ -90,6 +90,41 @@ window.addEventListener("scroll", function () {
 
   });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+});
+const slider = document.getElementById("sliderWrapper");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+let index = 0;
+
+function updateSlide() {
+  slider.style.transform = `translateX(-${index * 100}vw)`;
+}
+
+next.addEventListener("click", () => {
+  index = (index + 1) % 3;
+  updateSlide();
+});
+
+prev.addEventListener("click", () => {
+  index = (index - 1 + 3) % 3;
+  updateSlide();
+});
+
+// Auto slide
+setInterval(() => {
+  index = (index + 1) % 3;
+  updateSlide();
+}, 5000);
+
+// Hamburger
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
