@@ -439,13 +439,39 @@ h1, h2, h3, h4, h5 {
 
   .car-absolute {
     position: absolute;
-    width: 40px;
+    width: 24px;
     height: 24px;
     transform: translate(-50%, -50%);
     transition: left 0.6s ease, top 0.6s ease;
     pointer-events: none;
     z-index: 10;
   }
+    #popup {
+    position: absolute;
+    max-width: 200px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    transform: translate(-9999px, -9999px); /* hide by default */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 20;
+}
+
+#popup.show {
+    opacity: 1;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #007bff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+  
 
   .timeline-popup {
     position: absolute;
