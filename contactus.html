@@ -25,81 +25,86 @@
             padding: 0 20px;
         }
         
-        header {
-            background: #4c846f;
-            color: white;
-            padding: rem 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo img {
-            height: 60px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .logo-text span {
-            color: #0d3a16;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-        
-        nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        nav ul li a.active {
-            background: rgba(255, 255, 255, 0.3);
-        }
+       #navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  padding: 10px 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar.scrolled {
+  background-color: #356352;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+#navbar img {
+  height: 40px;
+}
+
+/* Navigation links - always visible on desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hamburger icon - hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden initially */
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    display: flex; /* toggled open via JS */
+  }
+
+  .nav-links li a {
+    color: black;
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: block; /* only visible on mobile */
+  }
+}
         
         .hero {
            background: linear-gradient(rgba(20, 20, 20, 0.8), rgba(0, 0, 0, 0)),
@@ -501,25 +506,25 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="/images/logo/APP log.png" alt="">
-                </div>
-                <div class="logo-text"> <span></span></div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="aboutus.html">ABOUT US</a></li>
-                    <li><a href="resource.html">RESOURCE</a></li>
-                    <li><a href="business.html">BUSINESS</a></li>
-                    <li><a href="#" class="active">CONTACT US</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<nav id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="images/logo/APP log.png" alt="Logo">
+    </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">HOME</a></li>
+      <li><a href="aboutus.html">ABOUT US</a></li>
+      <li><a href="resource.html">RESOURCE</a></li>
+      <li><a href="business.html">BUSINESS</a></li>
+      <li><a href="#">CONTACT US</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+  </div>
+</nav>
 
     <section class="hero">
         <div class="container hero-content">
@@ -707,7 +712,26 @@
             } else {
                 alert('Please fill all required fields.');
             }
-        });
+        });   
+
+        window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+});
+   
     </script>
 </body>
 </html>
