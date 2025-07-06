@@ -7,7 +7,7 @@ $(document).ready(function() {
         infinite: true,
         speed: 1001,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 1000,
         fade: true,
         cssEase: 'linear',
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',

@@ -113,6 +113,30 @@ h1, h2, h3, h4, h5 {
     display: block; /* only visible on mobile */
   }
 }
+.custom-nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: -60px; /* pull it up into banner */
+  position: relative;
+  z-index: 10;
+}
+
+.nav-btn {
+  background-color: #356352;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #264b3f;
+}
 
 
 
@@ -158,7 +182,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .banner-caption h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     color: white;
     font-weight: 500;
@@ -193,7 +217,7 @@ h1, h2, h3, h4, h5 {
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
     .banner-caption {
-        padding: 60px 16px; /* Less vertical, more suitable for mobile */
+        padding: 100px 16px; /* Less vertical, more suitable for mobile */
     }
     .banner-caption h1 {
         font-size: 1.5rem;
@@ -350,6 +374,7 @@ h1, h2, h3, h4, h5 {
 .blog-description {
     color: var(--medium-gray);
     margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.95rem;
 }
 
@@ -417,6 +442,7 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     background: white;
     color: #222;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
     padding: 20px 25px;
     border-radius: 10px;
@@ -707,7 +733,7 @@ background-image: url(../images/homepage/4.jpeg);
     }
     
     .banner-caption h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     
     .theme-main-header {
