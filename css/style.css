@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .timeline-svg-wrap {
-    height: 160px;               /* keep aspect but shorter */
+    height: 240px;               /* keep aspect but shorter */
   }
 
   .dot {
