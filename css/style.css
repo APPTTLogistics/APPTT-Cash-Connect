@@ -400,82 +400,51 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Timeline Section */
-.timeline-wrapper {
-    position: relative;
-    padding: 70px 30px ;
-    background: #E6F4EA;
-    text-align: center;
+/* ───────── MOBILE VIEW (≤ 600 px) ───────── */
+@media (max-width: 600px) {
+
+  /* wrapper spacing */
+  .timeline-wrapper {
+    padding: 40px 16px;          /* was 70px 30px */
   }
 
+  /* heading size */
   .timeline-heading {
-    font-size: 36px;
-    font-weight: bold;
-    color: #1976d2 ;
-    margin-bottom: 60px;
+    font-size: 24px;             /* was 36px */
+    margin-bottom: 40px;         /* was 60px */
   }
 
+  /* SVG canvas height */
   .timeline-svg-wrap {
-    position: relative;
-    width: 100%;
-    height: 240px;
-    margin: 0 auto;
+    height: 160px;               /* was 240px */
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
+  /* dots */
   .dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #004aad ;
-    border: 3px solid #fff;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;           /* slimmer white ring */
   }
 
+  /* moving car icon */
   .car-absolute {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    transform: translate(-50%, -50%);
-    transition: left 0.6s ease, top 0.6s ease;
-    pointer-events: none;
-    z-index: 10;
+    width: 18px;
+    height: 18px;
   }
 
+  /* pop‑up card */
   .timeline-popup {
-    position: absolute;
-    background: white;
-    color: #222;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    padding: 20px 25px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-    transform: translate(-50%, -120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    min-width: 260px;
-    max-width: 300px;
-    z-index: 11;
+    font-size: 14px;             /* was 15px */
+    min-width: 220px;
+    max-width: 260px;
+    padding: 15px 20px;          /* tighter padding */
+    transform: translate(-50%, -110%);
   }
-
-  .timeline-popup.show {
-    opacity: 1;
-  }
-
   .timeline-popup strong {
-    display: block;
-    font-size: 18px;
-    color: #0047ab;
-    margin-bottom: 10px;
+    font-size: 16px;             /* was 18px */
   }
+}
+
 /* Clients Section */
 .slider-container {
   width: 100%;
