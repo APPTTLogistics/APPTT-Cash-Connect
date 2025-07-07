@@ -36,86 +36,99 @@
         }
 
         /* Header Styles */
-        #navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  transition: all 0.3s ease;
-  background-color: #356352;
-  padding: 5px 0;
-}
+          #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #356352;
+            padding: 10px 0;
+            z-index: 999;
+            height: 60px;
+        }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
 
-#navbar.scrolled {
-  background-color: #356352;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        #navbar.scrolled {
+            background-color: #356352;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-/* Logo styling */
-#navbar img {
-  height: 40px;
-}
+        #navbar img {
+            height: 40px;
+        }
 
-/* Navigation links - always visible on desktop */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
 
-.nav-links li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
+        .nav-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-/* Hamburger icon - hidden on desktop */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: white;
-}
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+        }
 
-/* ---------- MOBILE VIEW ---------- */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* hidden initially */
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
+        /* Hero Section */
+        .careers-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images\logo\APP BANNER.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 180px 20px 100px;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
 
-  .nav-links.show {
-    display: flex; /* toggled open via JS */
-  }
+        .careers-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
 
-  .nav-links li a {
-    color: black;
-    padding: 10px 0;
-  }
+        .careers-hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
 
-  .hamburger {
-    display: block; /* only visible on mobile */
-  }
-}
+        .theme-button-one {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .theme-button-one:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
         /* Section Styles */
         section {
@@ -299,6 +312,92 @@
         }
 
         /* Responsive Design */
+                @media (max-width: 992px) {
+            .careers-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .careers-hero {
+                padding: 150px 20px 80px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                width: 200px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li a {
+                color: black;
+                padding: 10px 0;
+                display: block;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .careers-hero {
+                padding: 130px 20px 60px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-promo {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
         @media (max-width: 768px) {
             header {
                 height: auto;
@@ -324,25 +423,26 @@
     </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <img src="images/logo/APP log.png" alt="Logo">
-    </div>
+    <header id="navbar">
+        <div class="nav-container">
+            <img src="https://via.placeholder.com/150x40?text=APPTT+Logistics" alt="APPTT Logistics Logo">
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="business.html" class="active">BUSINESS</a></li>
+                <li><a href="careers.html">CAREERS</a></li>
+                <li><a href="contactus.html">CONTACT US</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </header>
 
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">HOME</a></li>
-      <li><a href="aboutus.html">ABOUT US</a></li>
-      
-      <li><a href="#">BUSINESS</a></li>
-      <li><a href="contactus.html">CONTACT US</a></li>
-    </ul>
-
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
-  </div>
-</nav>
+    <!-- Hero Section -->
+    <section class="careers-hero">
+        <h1>Build Your Career at APPTT Logistics</h1>
+        <p>Join our team of logistics experts and help shape the future of global supply chain solutions.</p>
+        <a href="#job-openings" class="theme-button-one">View Current Openings</a>
+    </section>
     
     <!-- Fleet Section -->
     <section class="fleet">
@@ -374,12 +474,12 @@
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-map-marked-alt"></i>
-                    <div class="stat-number">5</div>
+                    <div class="stat-number">10+</div>
                     <div class="stat-text">States Served</div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-building"></i>
-                    <div class="stat-number">6</div>
+                    <div class="stat-number">50+</div>
                     <div class="stat-text">Branch Offices</div>
                 </div>
                 <div class="stat-card">
