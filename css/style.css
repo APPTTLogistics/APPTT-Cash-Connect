@@ -479,37 +479,38 @@ h1, h2, h3, h4, h5 {
 /* Fires on screens 600 px wide or less */
 @media (max-width: 600px) {
   .timeline-wrapper {
-    padding: 40px 15px;          /* a bit tighter */
+    padding: 40px 15px;
   }
 
   .timeline-heading {
-    font-size: 24px;             /* down from 36 px */
-    margin-bottom: 40px;
+    font-size: 22px;
+    margin-bottom: 30px;
   }
 
   .timeline-svg-wrap {
-    height: 240px;               /* keep aspect but shorter */
+    height: 200px;
   }
 
   .dot {
-    width: 12px;
-    height: 12px;
-    border-width: 2px;           /* keeps the white ring proportional */
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
   }
 
   .car-absolute {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .timeline-popup {
-    font-size: 14px;
-    padding: 15px 18px;
-    min-width: 200px;
-    max-width: 260px;
-    transform: translate(-50%, -110%);
+    font-size: 13px;
+    padding: 12px 16px;
+    min-width: 180px;
+    max-width: 240px;
+    transform: translate(-50%, -120%);
   }
 }
+
 
 /* Clients Section */
 .slider-container {
