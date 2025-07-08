@@ -717,7 +717,7 @@ background-image: url(../images/homepage/4.jpeg);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 25px 0;
     text-align: center;
 }
@@ -829,4 +829,4 @@ background-image: url(../images/homepage/4.jpeg);
         padding: 10px 25px;
         font-size: 16px;
     }
-}
+} 
