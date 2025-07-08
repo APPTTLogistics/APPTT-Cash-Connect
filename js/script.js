@@ -143,17 +143,23 @@ window.addEventListener('scroll', function () {
   dot.addEventListener('mouseenter', () => {
     const popup = dot.querySelector('.timeline-popup');
     const rect = dot.getBoundingClientRect();
+    const screenWidth = window.innerWidth;
 
-    // Adjust popup position if too close to the left/right
+    // Reset
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -120%)';
+
+    // Left edge handling
     if (rect.left < 130) {
-      popup.style.left = '60%';
-      popup.style.transform = 'translate(-30%, -120%)';
-    } else if (rect.right > window.innerWidth - 130) {
-      popup.style.left = '40%';
-      popup.style.transform = 'translate(-70%, -120%)';
-    } else {
-      popup.style.left = '50%';
-      popup.style.transform = 'translate(-50%, -120%)';
+      popup.style.left = '10px';
+      popup.style.transform = 'translate(0, -120%)';
+    }
+
+    // Right edge handling
+    if (rect.right > screenWidth - 130) {
+      popup.style.left = 'auto';
+      popup.style.right = '10px';
+      popup.style.transform = 'translate(0, -120%)';
     }
   });
 });
