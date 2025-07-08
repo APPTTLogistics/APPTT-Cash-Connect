@@ -13,35 +13,44 @@ $(document).ready(function() {
     });
     
     // Timeline animation
-    const car = document.getElementById('carIcon');
-    const popup = document.getElementById('popup');
-    const dots = document.querySelectorAll('.dot');
-    let index = 0;
-    
-    function animateToDot(i) {
-        const dot = dots[i];
-        const rect = dot.getBoundingClientRect();
-        const parentRect = dot.parentElement.getBoundingClientRect();
-        
-        const x = rect.left - parentRect.left + dot.offsetWidth / 2;
-        const y = rect.top - parentRect.top + dot.offsetHeight / 2;
-        
-        car.style.left = `${x}px`;
-        car.style.top = `${y}px`;
-        
-        popup.innerHTML = `<strong>${dot.dataset.year}</strong><br>${dot.dataset.text}`;
-        popup.style.left = `${x}px`;
-        popup.style.top = `${y - 40}px`;
-        popup.classList.add('show');
-        
-        setTimeout(() => {
-            popup.classList.remove('show');
-            index = (index + 1) % dots.length;
-            setTimeout(() => animateToDot(index), 800);
-        }, 3000);
-    }
-    
-    window.addEventListener('load', () => animateToDot(index));
+let index = 0;
+let car, popup, dots;
+
+function animateToDot(i) {
+    const dot = dots[i];
+    const rect = dot.getBoundingClientRect();
+    const parentRect = dot.parentElement.getBoundingClientRect();
+
+    const x = rect.left - parentRect.left + dot.offsetWidth / 2;
+    const y = rect.top - parentRect.top + dot.offsetHeight / 2;
+
+    car.style.left = `${x}px`;
+    car.style.top = `${y}px`;
+
+    popup.innerHTML = `<strong>${dot.dataset.year}</strong><br>${dot.dataset.text}`;
+    popup.style.left = `${x}px`;
+    popup.style.top = `${y - 40}px`;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+        index = (index + 1) % dots.length;
+        setTimeout(() => animateToDot(index), 800);
+    }, 3000);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    car = document.getElementById('carIcon');
+    popup = document.getElementById('popup');
+    dots = document.querySelectorAll('.dot');
+});
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        animateToDot(index);
+    }, 200); // delay to allow layout to stabilize
+});
+
     
     // Counter animation
     const counters = document.querySelectorAll('.counter');
