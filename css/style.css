@@ -458,25 +458,19 @@ h1, h2, h3, h4, h5 {
     z-index: 10;
   }
 
-  .timeline-popup {
-    position: absolute;
-    background: white;
-    color: #222;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    padding: 20px 25px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-    transform: translate(-50%, -120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-    min-width: 260px;
-    max-width: 300px;
-    z-index: 11;
-  }
-
+ .timeline-popup {
+  font-size: 13px;
+  padding: 12px 16px;
+  min-width: 180px;
+  max-width: 240px;
+  transform: translate(-50%, -120%);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
   .timeline-popup.show {
     opacity: 1;
   }
@@ -488,7 +482,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 10px;
   }/* ─── Mobile tweaks ────────────────────────── */
 /* Fires on screens 600 px wide or less */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .timeline-wrapper {
     padding: 40px 15px;
   }
@@ -498,8 +492,10 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 30px;
   }
 
+  
   .timeline-svg-wrap {
-    height: 240px; /* Reduced height for small screens */
+    overflow-x: hidden;
+    padding: 0 10px;
   }
   .dot {
     padding:1px;
@@ -513,12 +509,10 @@ h1, h2, h3, h4, h5 {
     height: 20px;
   }
 
-  .timeline-popup {
-    font-size: 13px;
-    padding: 12px 16px;
-    min-width: 180px;
-    max-width: 240px;
-    transform: translate(-50%, -120%);
+   .timeline-popup {
+    max-width: 80vw;
+    transform: translate(-50%, -100%);
+    left: 50%;
   }
 }
 

@@ -139,3 +139,21 @@ window.addEventListener('scroll', function () {
       navbar.style.backgroundColor = 'transparent';
     }
   });
+  dots.forEach((dot) => {
+  dot.addEventListener('mouseenter', () => {
+    const popup = dot.querySelector('.timeline-popup');
+    const rect = dot.getBoundingClientRect();
+
+    // Adjust popup position if too close to the left/right
+    if (rect.left < 130) {
+      popup.style.left = '60%';
+      popup.style.transform = 'translate(-30%, -120%)';
+    } else if (rect.right > window.innerWidth - 130) {
+      popup.style.left = '40%';
+      popup.style.transform = 'translate(-70%, -120%)';
+    } else {
+      popup.style.left = '50%';
+      popup.style.transform = 'translate(-50%, -120%)';
+    }
+  });
+});
