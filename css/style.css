@@ -475,7 +475,7 @@ h1, h2, h3, h4, h5 {
 /* Mobile-specific override */
 @media (max-width: 600px) {
   .timeline-popup {
-    max-width: 80vw;
+    max-width: 50vw;
   }
 
   .dot:first-child .timeline-popup {
