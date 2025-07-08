@@ -1,6 +1,6 @@
 // script.js
 $(document).ready(function() {
-    // Initialize Slick slider for banner
+
     $('.banner-one').slick({
         dots: true,
         arrows: true,
