@@ -1,6 +1,6 @@
 // script.js
 $(document).ready(function() {
-
+    // Initialize Slick slider for banner
     $('.banner-one').slick({
         dots: true,
         arrows: true,
@@ -13,36 +13,36 @@ $(document).ready(function() {
     });
     
     // Timeline animation
-    const car = document.getElementById('carIcon');
-    const popup = document.getElementById('popup');
-    const dots = document.querySelectorAll('.dot');
-    let index = 0;
-    
-    function animateToDot(i) {
-        const dot = dots[i];
-        const rect = dot.getBoundingClientRect();
-        const parentRect = dot.parentElement.getBoundingClientRect();
-        
-        const x = rect.left - parentRect.left + dot.offsetWidth / 2;
-        const y = rect.top - parentRect.top + dot.offsetHeight / 2;
-        
-        car.style.left = `${x}px`;
-        car.style.top = `${y}px`;
-        
-        popup.innerHTML = `<strong>${dot.dataset.year}</strong><br>${dot.dataset.text}`;
-        popup.style.left = `${x}px`;
-        popup.style.top = `${y - 40}px`;
-        popup.classList.add('show');
-        
-        setTimeout(() => {
-            popup.classList.remove('show');
-            index = (index + 1) % dots.length;
-            setTimeout(() => animateToDot(index), 800);
-        }, 3000);
-    }
-    
-    window.addEventListener('load', () => animateToDot(index));
-    
+const car = document.getElementById('carIcon');
+const popup = document.getElementById('popup');
+const dots = document.querySelectorAll('.dot');
+let index = 0;
+
+function animateToDot(i) {
+    const dot = dots[i];
+    const rect = dot.getBoundingClientRect();
+    const parentRect = dot.parentElement.getBoundingClientRect();
+
+    const x = rect.left - parentRect.left + dot.offsetWidth / 2;
+    const y = rect.top - parentRect.top + dot.offsetHeight / 2;
+
+    // Smooth transform for car icon
+    car.style.transform = `translate(${x}px, ${y}px)`;
+
+    // Show popup with adjusted position
+    popup.innerHTML = `<strong>${dot.dataset.year}</strong><br>${dot.dataset.text}`;
+    popup.style.transform = `translate(${x}px, ${y - 60}px)`;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+        index = (index + 1) % dots.length;
+        setTimeout(() => animateToDot(index), 800);
+    }, 3000);
+}
+
+window.addEventListener('load', () => animateToDot(index));
+
     // Counter animation
     const counters = document.querySelectorAll('.counter');
     const speed = 200;
