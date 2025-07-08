@@ -76,6 +76,11 @@ h1, h2, h3, h4, h5 {
   text-decoration: none;
   font-weight: 600;
 }
+  .custom-nav-buttons {
+    margin-top: 20px; /* Changed from -60px to positive value */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+  }
 
 /* Hamburger icon - hidden on desktop */
 .hamburger {
@@ -223,7 +228,7 @@ h1, h2, h3, h4, h5 {
     }
 
     .banner-caption {
-    padding: 190px 16px; /* Less vertical padding */
+    padding: 120px 16px 60px !important; /* Reduced top padding */
   }
     .banner-caption h1 {
         font-size: 1.75rem;
@@ -335,6 +340,12 @@ h1, h2, h3, h4, h5 {
 .card-content p {
     color: var(--medium-gray);
     font-size: 1rem;
+}
+@media (max-width: 480px) {
+  .services-container, 
+  .blog-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
 }
 
 /* Journal Section */
@@ -488,10 +499,10 @@ h1, h2, h3, h4, h5 {
   }
 
   .timeline-svg-wrap {
-    height: 240px;
+    height: 240px; /* Reduced height for small screens */
   }
-
   .dot {
+    padding:1px;
     width: 14px;
     height: 14px;
     border-width: 2px;
@@ -619,6 +630,13 @@ background-image: url(../images/homepage/4.jpeg);
   font-size: 24px;
   margin: 8px 0 0;
 }
+@media (max-width: 480px) {
+  .facts-grid {
+    flex-direction: column; /* Stack facts vertically */
+    align-items: center;
+    gap: 30px;
+  }
+}
 /* Footer */
 .green-footer {
     background-color: #356352;
@@ -647,7 +665,7 @@ background-image: url(../images/homepage/4.jpeg);
 }
 
 .footer-promo-left span {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .get-in-touch-button {
@@ -749,7 +767,7 @@ background-image: url(../images/homepage/4.jpeg);
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (max-width: 600px) {
     .banner-caption h1 {
         font-size: 2.5rem;
     }
@@ -771,6 +789,15 @@ background-image: url(../images/homepage/4.jpeg);
         text-align: center;
         gap: 20px;
     }
+    .footer-content {
+    grid-template-columns: 1fr; /* Stack footer sections */
+    text-align: center;
+  }
+  
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%); /* Center underline */
+  }
 }
 
 @media (max-width: 768px) {
@@ -786,9 +813,15 @@ background-image: url(../images/homepage/4.jpeg);
         padding: 10px 0;
     }
     
-    .logo img {
-        max-width: 200px;
-    }
+    .logo-slider {
+    animation: scrollLoop 40s linear infinite; /* Slower animation */
+    gap: 40px; /* Reduced gap between logos */
+  }
+  
+  .logo-slider img {
+    height: 60px; /* Smaller logos */
+  }
+
     
     #mega-menu-holder ul {
         flex-direction: column;
