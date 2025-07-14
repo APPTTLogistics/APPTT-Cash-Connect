@@ -142,6 +142,56 @@ h1, h2, h3, h4, h5 {
 .nav-btn:hover {
   background-color: #264b3f;
 }
+.has-subnav {
+  position: relative;
+}
+
+.subnav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #9dad9c;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 180px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  z-index: 999;
+}
+
+.subnav li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav li a:hover {
+  background-color: #444;
+}
+
+.has-subnav:hover .subnav {
+  max-height: 500px; /* enough to fit all items */
+  opacity: 1;
+}
+
+/* Mobile: stack layout */
+@media (max-width: 768px) {
+  .subnav {
+    position: static;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .has-subnav:hover .subnav {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
 
 
 
