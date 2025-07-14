@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5 {
   top: 0;
   width: 100%;
   background-color: #356352;
-  padding: 10px 0; /* Reduce this if needed */
+  padding: 8px 0; /* Reduce this if needed */
   z-index: 999;
 }
 
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-btn {
-  background-color: #356352;
+  background-color: #1ec588;
   color: white;
   border: none;
   padding: 10px 25px;
@@ -193,13 +193,10 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-
-
-
 /* Banner Styles */
 .banner-one {
     margin-top: 0; /* REMOVE this if already present */
-    padding-top: 70px; /* Add this to push below fixed navbar */
+    padding-top: 60px; /* Add this to push below fixed navbar */
     position: relative;
     height: 100vh;
     overflow: hidden;

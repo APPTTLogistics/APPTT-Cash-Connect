@@ -4,25 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apptt Cash Logistics - Fleet & Capabilities</title>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ResourcePage",
-  "name": "Resource - APPTT Logistics",
-  "url": "https://www.appttcashconnect.in/resource.html"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Resources - APPTT Logistics",
-  "url": "https://www.appttcashconnect.in/resource.html",
-  "description": "About Fleet and capabilities"
-}
-</script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -33,11 +14,11 @@
         }
         
         :root {
-            --primary-green: #4c846f;
-            --dark-green: #4c846f;
-            --light-green: #4c846f;
-            --lighter-green: #e8f5e9;
-            --accent-green: #4c846f;
+            --primary-green: #1e5a3b;
+            --dark-green: #143c27;
+            --light-green: #2d8a5a;
+            --lighter-green: #e6f4ea;
+            --accent-green: #3da76d;
             --text-dark: #333;
             --text-light: #666;
             --white: #fff;
@@ -67,8 +48,8 @@
         
         /* Header Styles */
         header {
-            background-color: var(--primary-green);
-            padding: 15px 0;
+            background-color:#184930;
+            padding: 7px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -109,7 +90,7 @@
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -128,11 +109,45 @@
             background: var(--accent-green);
             border-radius: 3px;
         }
-        
+        /* Parent dropdown styling */
+li.dropdown {
+  position: relative;
+}
+
+/* Hide submenu by default */
+li.dropdown .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Show submenu on hover */
+li.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Submenu item style */
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(30, 87, 35, 0.85), rgba(30, 87, 35, 0.95)), url('https://images.unsplash.com/photo-1594489573450-1e75e030eeb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
-            height: 70vh;
+            background: linear-gradient(rgba(14, 24, 19, 0.877), rgba(34, 41, 38, 0.164)), url('./images/homepage/4.jpeg') center/cover no-repeat;
+            height: 90vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -193,7 +208,7 @@
             left: 0;
             width: 100%;
             height: 200px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23e8f5e9' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") center/cover no-repeat;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23e6f4ea' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") center/cover no-repeat;
             transform: rotate(180deg);
         }
         
@@ -208,7 +223,7 @@
             color: var(--primary-green);
             line-height: 1;
             margin-bottom: 15px;
-            text-shadow: 3px 3px 0 var(--accent-green);
+            text-shadow: 3px 3px 0 rgba(30, 90, 58, 0.1);
         }
         
         .vehicle-subtitle {
@@ -230,7 +245,7 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            border: 1px solid rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(30, 90, 58, 0.2);
         }
         
         .feature-card:hover {
@@ -349,8 +364,8 @@
             color: var(--light-green);
         }
         
-        /* Digital Integration */
-        .digital-integration {
+        /* Fleet Technology */
+        .fleet-technology {
             padding: 100px 0;
             background: linear-gradient(to right, var(--primary-green), var(--dark-green));
             color: var(--white);
@@ -358,7 +373,7 @@
             overflow: hidden;
         }
         
-        .digital-content {
+        .tech-content {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -367,34 +382,34 @@
             z-index: 2;
         }
         
-        .digital-text {
+        .tech-text {
             flex: 1;
             min-width: 300px;
         }
         
-        .digital-features {
+        .tech-features {
             flex: 1;
             min-width: 300px;
         }
         
-        .digital-text h2 {
+        .tech-text h2 {
             color: #fff;
             margin-bottom: 25px;
             font-size: 2.5rem;
         }
         
-        .digital-list {
+        .tech-list {
             list-style: none;
         }
         
-        .digital-list li {
+        .tech-list li {
             margin-bottom: 25px;
             padding-left: 40px;
             position: relative;
             font-size: 1.1rem;
         }
         
-        .digital-list li:before {
+        .tech-list li:before {
             content: '\f00c';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
@@ -411,38 +426,77 @@
             color: var(--accent-green);
         }
         
-        .digital-pattern {
+        .tech-pattern {
             position: absolute;
             top: 0;
             right: 0;
             width: 40%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231b5e20' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231e5a3b' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
             opacity: 0.4;
         }
         
-        /* Security Section */
-        .security-section {
+        /* Fleet Stats */
+        .fleet-stats {
             padding: 100px 0;
             background-color: var(--white);
         }
         
-        .security-grid {
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--lighter-green);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        
+        /* Maintenance Section */
+        .maintenance-section {
+            padding: 100px 0;
+            background: var(--lighter-green);
+        }
+        
+        .maintenance-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .security-card {
-            background: var(--lighter-green);
+        .maintenance-card {
+            background: var(--white);
             border-radius: 15px;
             padding: 40px 30px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
-        .security-card:before {
+        .maintenance-card:before {
             content: '';
             position: absolute;
             top: 0;
@@ -452,13 +506,13 @@
             background: var(--light-green);
         }
         
-        .security-icon {
+        .maintenance-icon {
             font-size: 3rem;
             color: var(--primary-green);
             margin-bottom: 25px;
         }
         
-        .security-card h3 {
+        .maintenance-card h3 {
             margin-bottom: 20px;
             color: var(--dark-green);
         }
@@ -560,15 +614,14 @@
         <div class="container header-container">
             <div class="logo">
                 <div style="background-color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                    <i class="fas fa-shield-alt" style="font-size: 24px; color: #2e7d32;"></i>
+                    <i class="fas fa-shield-alt" style="font-size: 24px; color: #1e5a3b;"></i>
                 </div>
                 <h1>Apptt Cash Logistics</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-               <li><a href="aboutus.html">ABOUT US</a></li>
-               <li><a href="business.html">BUSINESS</a></li>
-                 <li><a href="#" class="active"></a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="business.html">BUSINESS</a></li>
                 <li><a href="careers.html">CAREERS</a></li>
                 <li><a href="contactus.html">CONTACT US</a></li>
             </ul>
@@ -648,6 +701,7 @@
                             <li>Dimensions: 5.2m × 2.1m × 2.4m</li>
                             <li>Ballistic Protection Level B6</li>
                             <li>GPS & CCTV monitored</li>
+                            <li>Fuel Efficiency: 12 km/l</li>
                         </ul>
                     </div>
                 </div>
@@ -664,6 +718,7 @@
                             <li>Dimensions: 7.5m × 2.5m × 3.2m</li>
                             <li>Ballistic Protection Level B7</li>
                             <li>Biometric access control</li>
+                            <li>Fuel Efficiency: 8 km/l</li>
                         </ul>
                     </div>
                 </div>
@@ -680,6 +735,7 @@
                             <li>Dimensions: 10.2m × 2.8m × 3.5m</li>
                             <li>Ballistic Protection Level B7+</li>
                             <li>Remote immobilization system</li>
+                            <li>Fuel Efficiency: 5 km/l</li>
                         </ul>
                     </div>
                 </div>
@@ -687,19 +743,19 @@
         </div>
     </section>
     
-    <!-- Digital Integration -->
-    <section class="digital-integration">
-        <div class="digital-pattern"></div>
+    <!-- Fleet Technology -->
+    <section class="fleet-technology">
+        <div class="tech-pattern"></div>
         <div class="container">
-            <div class="digital-content">
-                <div class="digital-text">
-                    <h2>Digitally Integrated for Maximum Security</h2>
-                    <p>Our fleet management system integrates cutting-edge technology to ensure the highest levels of security and operational efficiency for cash transportation.</p>
+            <div class="tech-content">
+                <div class="tech-text">
+                    <h2>Advanced Vehicle Technology</h2>
+                    <p>Our fleet incorporates cutting-edge technology to ensure the highest levels of security and operational efficiency for cash transportation.</p>
                     <p>Every vehicle in our fleet is connected to our central command center, providing real-time data and analytics for proactive decision-making and rapid response to any situation.</p>
                 </div>
                 
-                <div class="digital-features">
-                    <ul class="digital-list">
+                <div class="tech-features">
+                    <ul class="tech-list">
                         <li>Centralized fleet management dashboard with real-time analytics</li>
                         <li>Automated route optimization and geofencing capabilities</li>
                         <li>Integrated CCTV systems with cloud storage of footage</li>
@@ -712,42 +768,71 @@
         </div>
     </section>
     
-    <!-- Security Section -->
-    <section class="security-section">
+    <!-- Fleet Stats -->
+    <section class="fleet-stats">
         <div class="container">
-            <h2 class="section-title">CCTV Secure Cash Transport</h2>
+            <h2 class="section-title">Fleet Statistics</h2>
             
-            <div class="security-grid">
-                <div class="security-card">
-                    <div class="security-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>360° Surveillance</h3>
-                    <p>Multiple high-definition cameras provide complete interior and exterior coverage during transit.</p>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">347</div>
+                    <div class="stat-label">Vehicles in Fleet</div>
                 </div>
                 
-                <div class="security-card">
-                    <div class="security-icon">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
-                    <h3>Cloud Storage</h3>
-                    <p>All footage is securely stored in encrypted cloud servers with redundant backups.</p>
+                <div class="stat-card">
+                    <div class="stat-number">98.7%</div>
+                    <div class="stat-label">Operational Availability</div>
                 </div>
                 
-                <div class="security-card">
-                    <div class="security-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <h3>Access Control</h3>
-                    <p>Biometric authentication required for all cash compartment access.</p>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Monitoring & Support</div>
                 </div>
                 
-                <div class="security-card">
-                    <div class="security-icon">
-                        <i class="fas fa-bell"></i>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Years Average Vehicle Lifespan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Maintenance Section -->
+    <section class="maintenance-section">
+        <div class="container">
+            <h2 class="section-title">Vehicle Maintenance & Safety</h2>
+            
+            <div class="maintenance-grid">
+                <div class="maintenance-card">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Real-time Alerts</h3>
-                    <p>Instant notification system for any security breaches or route deviations.</p>
+                    <h3>Preventive Maintenance</h3>
+                    <p>Regular scheduled maintenance to prevent breakdowns and ensure optimal vehicle performance.</p>
+                </div>
+                
+                <div class="maintenance-card">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Upgrades</h3>
+                    <p>Continuous security enhancements to keep pace with evolving threats and technologies.</p>
+                </div>
+                
+                <div class="maintenance-card">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Fuel Management</h3>
+                    <p>Advanced fuel monitoring systems to optimize consumption and reduce environmental impact.</p>
+                </div>
+                
+                <div class="maintenance-card">
+                    <div class="maintenance-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3>Accident Response</h3>
+                    <p>24/7 rapid response teams and protocols for any vehicle incidents or emergencies.</p>
                 </div>
             </div>
         </div>
@@ -780,11 +865,11 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
                         <li><a href="#">Fleet & Security</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -812,18 +897,8 @@
                 header.style.backgroundColor = 'var(--dark-green)';
             } else {
                 header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-                header.style.backgroundColor = 'var(--primary-green)';
+                header.style.backgroundColor = 'var(--dark-green)';
             }
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
         
         // Scroll animation for elements
@@ -834,12 +909,16 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
         
-        document.querySelectorAll('.feature-card, .vehicle-card, .security-card').forEach(card => {
+        document.querySelectorAll('.feature-card, .vehicle-card, .stat-card, .maintenance-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
     </script>
