@@ -231,7 +231,7 @@ h1, h2, h3, h4, h5 {
     z-index: 2;
     color: white;
     margin: 0 auto;
-    padding: 200px 50px 60px; /* Top padding reduced for better spacing */
+    padding: 240px 50px 60px; /* Top padding reduced for better spacing */
     text-align: center;
 }
 
