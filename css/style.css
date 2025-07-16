@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5 {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #356352;
+  background-color: #35635200;
   padding: 8px 0; /* Reduce this if needed */
   z-index: 999;
 }
@@ -59,7 +59,8 @@ h1, h2, h3, h4, h5 {
 
 /* Logo styling */
 #navbar img {
-  height: 40px;
+  height: 130px;
+  width: 180px;
 }
 
 /* Navigation links - always visible on desktop */
@@ -196,7 +197,7 @@ h1, h2, h3, h4, h5 {
 /* Banner Styles */
 .banner-one {
     margin-top: 0; /* REMOVE this if already present */
-    padding-top: 60px; /* Add this to push below fixed navbar */
+    padding-top: 0px; /* Add this to push below fixed navbar */
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -302,7 +303,7 @@ h1, h2, h3, h4, h5 {
 .preamble-header h2 {
     display: inline-block;
     color: var(--dark-gray);
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
     padding-bottom: 10px;
 }
