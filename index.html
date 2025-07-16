@@ -55,30 +55,32 @@
 </head>
 <body>
         <!-- Header -->
-<nav id="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <img src="images\logo\appt2.png" alt="Logo">
-    </div>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="aboutus.html">ABOUT US</a></li>
-   <li class="has-subnav">
-  <a href="business.html">BUSINESS</a>
-  <ul class="subnav">
-    <li><a href="resource.html">RESOURCES</a></li>
-  </ul>
-</li>
-      <li><a href="careers.html">CAREERS</a></li>
-      <li><a href="contactus.html">CONTACT US</a></li>
-    </ul>
-
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
-  </div>
-</nav>
-
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <!-- Default logo (visible when transparent) -->
+                <img id="logo-default" class="logo" src="images\logo\appt2.png" alt="Company Logo">
+                <!-- Scrolled logo (visible when background is solid) -->
+                <img id="logo-scrolled" class="logo" src="images\logo\APP log.png" alt="Company Logo">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li class="has-submenu">
+                    <a href="business.html" class="main-link">Business</a>
+                    <ul class="submenu">
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
 
         <!-- Banner Slider -->
