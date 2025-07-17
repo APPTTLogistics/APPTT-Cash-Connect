@@ -538,6 +538,7 @@ h1, h2, h3, h4, h5 {
 
 .blog-title {
     font-size: 1.4rem;
+    font-weight:600;
     color: var(--primary-green);
     margin: 10px 0;
 }
