@@ -47,6 +47,35 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.9s ease, visibility 0.9s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Hide content until loaded */
+    #content {
+      display: none;
+    }
+
+    /* Show content after load */
+    body.loaded #content {
+      display: block;
+    }
+
 
         /* Header Styles */
         #navbar {
@@ -427,6 +456,10 @@
     </style>
 </head>
 <body>
+    
+    <div id="loader">
+    <img src="css\ajax-loader.gif" alt="Loading..." >
+    </div>
 <nav id="navbar">
   <div class="nav-container">
     <div class="nav-logo">
@@ -678,6 +711,17 @@
         </div>
     </footer>
         <script>
+            window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+
+  // Delay hiding loader by 2.5 seconds (2500 ms)
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    document.body.classList.add("loaded");
+  }, 1000);
+});
+
+    
         window.addEventListener("scroll", function () {
       const navbar = document.getElementById("navbar");
       if (window.scrollY > 50) {

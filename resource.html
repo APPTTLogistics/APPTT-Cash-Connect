@@ -609,6 +609,9 @@ li.dropdown:hover .submenu {
     </style>
 </head>
 <body>
+    <div id="loader">
+    <img src="css\ajax-loader.gif" alt="Loading..." >
+    </div>
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -877,6 +880,16 @@ li.dropdown:hover .submenu {
     </footer>
 
     <script>
+                    window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+
+  // Delay hiding loader by 2.5 seconds (2500 ms)
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    document.body.classList.add("loaded");
+  }, 1000);
+});
+
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');

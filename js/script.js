@@ -1,4 +1,15 @@
 // script.js
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+
+  // Delay hiding loader by 2.5 seconds (2500 ms)
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    document.body.classList.add("loaded");
+  }, 2500);
+});
+
+    
 $(document).ready(function() {
     // Initialize Slick slider for banner
     $('.banner-one').slick({
