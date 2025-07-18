@@ -20,6 +20,8 @@
         :root {
             --primary-green: #007B5E;
             --secondary-green: #60a562;
+            --primary-gren: #12744e;
+            --secondary-gren: #154116;
             --light-green: #e6f4ea;
             --dark-gray: #151515;
             --medium-gray: #333;
@@ -79,7 +81,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #356352;
+            background:transparent;
             padding: 10px 0;
             z-index: 999;
             height: 60px;
@@ -96,7 +98,7 @@
         }
 
         #navbar.scrolled {
-            background-color: #356352;
+            background:linear-gradient(45deg, var(--primary-gren), var(--secondary-gren));
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -130,10 +132,10 @@
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
             background-size: cover;
             background-position: center;
-            padding: 180px 20px 100px;
+            padding: 200px 20px 100px;
             text-align: center;
             color: white;
-            margin-top: 60px;
+            
         }
 
         .careers-hero h1 {
@@ -454,7 +456,7 @@
 
         /* Footer */
         .green-footer {
-            background-color: #356352;
+            background:linear-gradient(45deg, var(--primary-gren), var(--secondary-gren));
             color: white;
             padding-top: 60px;
         }
