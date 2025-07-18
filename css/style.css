@@ -1,7 +1,7 @@
 /* style.css */
 :root {
-    --primary-green: #007B5E;
-    --secondary-green: #60a562;
+    --primary-green: #12744e;
+    --secondary-green: #154116;
     --light-green: #e6f4ea;
     --dark-gray: #151515;
     --medium-gray: #333;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #navbar.scrolled {
-    background-color: #356352;
+    background:linear-gradient(45deg, var(--primary-green), var(--secondary-green));
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     padding: 7px 0;
 }
@@ -797,7 +797,7 @@ background-image: url(../images/homepage/4.jpeg);
 }
 /* Footer */
 .green-footer {
-    background-color: #356352;
+    background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));;
     color: white;
     padding-top: 60px;
 }
