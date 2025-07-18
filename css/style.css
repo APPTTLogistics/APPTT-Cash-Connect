@@ -484,8 +484,9 @@ h1, h2, h3, h4, h5 {
 
 .card-content h3 {
     color: var(--primary-green);
+    font-weight: 700;
     margin-bottom: 15px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .card-content p {
