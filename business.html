@@ -90,7 +90,7 @@
   width: 100%;
   z-index: 999;
   transition: all 0.3s ease;
-  background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));;
+  background: transparent;
   padding: 5px 0;
 }
 
@@ -164,6 +164,53 @@
     display: block; /* only visible on mobile */
   }
 }
+.hero {
+            background: linear-gradient(rgba(14, 24, 19, 0.795), rgba(34, 41, 38, 0.164)), url('./images/homepage/IMG20240623135400.jpg') center/cover no-repeat;
+            height:100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff ;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
 
         /* Section Styles */
         section {
@@ -394,6 +441,13 @@
     </div>
   </div>
 </nav>
+  <section class="hero">
+        <div class="container hero-content">
+            <h1>Connect With APPTT Logistics</h1>
+            <p>We're here to provide seamless logistics solutions for your business. Reach out to our team for personalized service and support.</p>
+            <a href="#contact" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
     
     <!-- Fleet Section -->
     <section class="fleet">
