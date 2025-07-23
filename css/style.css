@@ -31,6 +31,30 @@ h1, h2, h3, h4, h5 {
     position: relative;
     min-height: 100vh;
 }
+/* For the entire scrollbar */
+::-webkit-scrollbar {
+  width: 12px;               /* vertical scrollbar width */
+  height: 12px;              /* horizontal scrollbar height */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;       /* color of the tracking area */
+  border-radius: 10px;
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #12744e;          /* color of the scroll thumb */
+  border-radius: 10px;
+  border: 3px solid #f1f1f1; /* creates padding around scroll thumb */
+}
+
+/* Scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8ab9a6;          /* color when hovered */
+}
+
 #loader {
       position: fixed;
       top: 0;
@@ -839,6 +863,7 @@ background-image: url(../images/homepage/4.jpeg);
 
 .footer-promo-left span {
     font-size: 1rem;
+    font-weight:500;
 }
 
 .get-in-touch-button {
@@ -861,7 +886,8 @@ background-image: url(../images/homepage/4.jpeg);
 
 .footer-content {
     display: grid;
-    font-family:inherit;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:600;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     max-width: 1200px;
@@ -871,6 +897,7 @@ background-image: url(../images/homepage/4.jpeg);
 
 .footer-col h4 {
     font-size: 1.4rem;
+    font-weight:750;
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 10px;
