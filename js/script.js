@@ -1,4 +1,3 @@
-// script.js
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
 
@@ -9,7 +8,6 @@ window.addEventListener("load", function () {
   }, 2500);
 });
 
-    
 $(document).ready(function() {
     // Initialize Slick slider for banner
     $('.banner-one').slick({
@@ -22,37 +20,6 @@ $(document).ready(function() {
         fade: true,
         cssEase: 'linear',
     });
-    
-    // Timeline animation
-    const car = document.getElementById('carIcon');
-    const popup = document.getElementById('popup');
-    const dots = document.querySelectorAll('.dot');
-    let index = 0;
-    
-    function animateToDot(i) {
-        const dot = dots[i];
-        const rect = dot.getBoundingClientRect();
-        const parentRect = dot.parentElement.getBoundingClientRect();
-        
-        const x = rect.left - parentRect.left + dot.offsetWidth / 2;
-        const y = rect.top - parentRect.top + dot.offsetHeight / 2;
-        
-        car.style.left = `${x}px`;
-        car.style.top = `${y}px`;
-        
-        popup.innerHTML = `<strong>${dot.dataset.year}</strong><br>${dot.dataset.text}`;
-        popup.style.left = `${x}px`;
-        popup.style.top = `${y - 40}px`;
-        popup.classList.add('show');
-        
-        setTimeout(() => {
-            popup.classList.remove('show');
-            index = (index + 1) % dots.length;
-            setTimeout(() => animateToDot(index), 800);
-        }, 3000);
-    }
-    
-    window.addEventListener('load', () => animateToDot(index));
     
     // Counter animation
     const counters = document.querySelectorAll('.counter');
@@ -88,26 +55,20 @@ $(document).ready(function() {
         }
     });
 
-      window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
             navbar.classList.toggle('scrolled', window.scrollY > 100);
-        });
-          document.querySelectorAll('.has-submenu .main-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parent = this.parentElement;
-        parent.classList.toggle('open');
-      }
+        }
     });
-  });
-        
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
-        const closeMenu = document.querySelector('.close-menu');
-        
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const closeMenu = document.querySelector('.close-menu');
+    
+    if (hamburger && navLinks && mobileOverlay && closeMenu) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.add('show');
             mobileOverlay.classList.add('show');
@@ -116,79 +77,154 @@ $(document).ready(function() {
         
         closeMenu.addEventListener('click', closeMobileMenu);
         mobileOverlay.addEventListener('click', closeMobileMenu);
-        
-        function closeMobileMenu() {
+    }
+    
+    function closeMobileMenu() {
+        if (navLinks && mobileOverlay) {
             navLinks.classList.remove('show');
             mobileOverlay.classList.remove('show');
             document.body.style.overflow = '';
         }
-  });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-});
-const slider = document.getElementById("sliderWrapper");
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-
-let index = 0;
-
-function updateSlide() {
-  slider.style.transform = `translateX(-${index * 100}vw)`;
-}
-
-next.addEventListener("click", () => {
-  index = (index + 1) % 3;
-  updateSlide();
-});
-
-prev.addEventListener("click", () => {
-  index = (index - 1 + 3) % 3;
-  updateSlide();
-});
-
-// Auto slide
-setInterval(() => {
-  index = (index + 1) % 3;
-  updateSlide();
-}, 5000);
-
-// Hamburger
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-});
-
-  dots.forEach((dot) => {
-  dot.addEventListener('mouseenter', () => {
-    const popup = dot.querySelector('.timeline-popup');
-    const rect = dot.getBoundingClientRect();
-    const screenWidth = window.innerWidth;
-
-    // Reset
-    popup.style.left = '50%';
-    popup.style.transform = 'translate(-50%, -120%)';
-
-    // Left edge handling
-    if (rect.left < 130) {
-      popup.style.left = '10px';
-      popup.style.transform = 'translate(0, -120%)';
     }
 
-    // Right edge handling
-    if (rect.right > screenWidth - 130) {
-      popup.style.left = 'auto';
-      popup.style.right = '10px';
-      popup.style.transform = 'translate(0, -120%)';
+    // Timeline animation
+    const dots = document.querySelectorAll('.timeline-dot');
+    if (dots.length > 0) {
+        const car = document.querySelector('.timeline-car');
+        const progress = document.querySelector('.timeline-progress');
+        const dotCount = dots.length;
+        let currentIndex = 0;
+        
+        function calculateDotPositions() {
+            const container = document.querySelector('.timeline-track');
+            if (!container) return [];
+            
+            const containerRect = container.getBoundingClientRect();
+            const positions = [];
+            
+            dots.forEach(dot => {
+                const dotRect = dot.getBoundingClientRect();
+                positions.push(dotRect.left - containerRect.left + (dotRect.width / 2) - (car.offsetWidth / 2));
+            });
+            
+            return positions;
+        }
+        
+        let dotPositions = calculateDotPositions();
+        
+        window.addEventListener('resize', function() {
+            dotPositions = calculateDotPositions();
+            updateCarPosition();
+        });
+        
+        function animateTimeline() {
+            showContent(currentIndex);
+            
+            setTimeout(() => {
+                hideContent(currentIndex);
+                
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % dotCount;
+                    updateCarPosition();
+                    animateTimeline();
+                }, 500);
+            }, 3000);
+        }
+        
+        function updateCarPosition() {
+            if (car && progress) {
+                car.style.left = `${dotPositions[currentIndex]}px`;
+                progress.style.width = `${(currentIndex / (dotCount - 1)) * 100}%`;
+                
+                dots.forEach(d => {
+                    d.classList.remove('active', 'pulse');
+                });
+                dots[currentIndex].classList.add('active', 'pulse');
+            }
+        }
+        
+        function showContent(index) {
+            const dot = dots[index];
+            const year = dot.getAttribute('data-year');
+            const contentText = dot.getAttribute('data-content');
+            const contentBox = dot.querySelector('.timeline-content-box');
+            
+            if (contentBox) {
+                contentBox.innerHTML = `
+                    <div class="content-title">${year}</div>
+                    <div class="content-text">${contentText}</div>
+                `;
+                contentBox.classList.add('active');
+            }
+        }
+        
+        function hideContent(index) {
+            const dot = dots[index];
+            const contentBox = dot.querySelector('.timeline-content-box');
+            if (contentBox) {
+                contentBox.classList.remove('active');
+                dot.classList.remove('pulse');
+            }
+        }
+        
+        updateCarPosition();
+        animateTimeline();
+
+        // Add popup handling for dots
+        dots.forEach((dot) => {
+            dot.addEventListener('mouseenter', () => {
+                const popup = dot.querySelector('.timeline-popup');
+                if (popup) {
+                    const rect = dot.getBoundingClientRect();
+                    const screenWidth = window.innerWidth;
+
+                    // Reset
+                    popup.style.left = '50%';
+                    popup.style.transform = 'translate(-50%, -120%)';
+
+                    // Left edge handling
+                    if (rect.left < 130) {
+                        popup.style.left = '10px';
+                        popup.style.transform = 'translate(0, -120%)';
+                    }
+
+                    // Right edge handling
+                    if (rect.right > screenWidth - 130) {
+                        popup.style.left = 'auto';
+                        popup.style.right = '10px';
+                        popup.style.transform = 'translate(0, -120%)';
+                    }
+                }
+            });
+        });
     }
-  });
+
+    // Slider functionality
+    const slider = document.getElementById("sliderWrapper");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    
+    if (slider && prev && next) {
+        let index = 0;
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * 100}vw)`;
+        }
+
+        next.addEventListener("click", () => {
+            index = (index + 1) % 3;
+            updateSlide();
+        });
+
+        prev.addEventListener("click", () => {
+            index = (index - 1 + 3) % 3;
+            updateSlide();
+        });
+
+        // Auto slide
+        setInterval(() => {
+            index = (index + 1) % 3;
+            updateSlide();
+        }, 5000);
+    }
 });
