@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Outfit', sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
@@ -472,6 +472,21 @@ h1, h2, h3, h4, h5 {
 .services-section {
     padding: 80px 0;
     background-color: #fff;
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    overflow: hidden; /* Ensures the decorative element doesn't cause scrollbars */
+}
+
+.services-section:after {
+    background: url('/images/homeservices/design.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    height: 100%;
+    right: 0; /* Changed from left to right for better positioning */
+    position: absolute;
+    top: -12%;
+    width: 26%;
+    z-index: 0; /* Ensures it stays behind the content */
 }
 
 .services-container {
@@ -481,6 +496,8 @@ h1, h2, h3, h4, h5 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative; /* Ensures content stays above the pseudo-element */
+    z-index: 1;
 }
 
 .service-card {
@@ -517,13 +534,17 @@ h1, h2, h3, h4, h5 {
     color: var(--medium-gray);
     font-size: 1rem;
 }
-@media (max-width: 480px) {
-  .services-container, 
-  .blog-container {
-    grid-template-columns: 1fr; /* Single column layout */
-  }
-}
 
+@media (max-width: 480px) {
+    .services-container, 
+    .blog-container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    
+    .services-section:after {
+        display: none; /* Optional: hide decorative element on small screens */
+    }
+}
 /* Journal Section */
 .journal-section {
     padding: 40px 0;
