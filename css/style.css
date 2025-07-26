@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5 {
     z-index: 2;
     color: white;
     margin: 0 auto;
-    padding: 240px 50px 60px; /* Top padding reduced for better spacing */
+    padding: 300px 50px 60px; /* Top padding reduced for better spacing */
     text-align: center;
 }
 
@@ -592,7 +592,6 @@ h1, h2, h3, h4, h5 {
 .blog-description {
     color: var(--medium-gray);
     margin-bottom: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.95rem;
 }
 
@@ -870,17 +869,21 @@ background-image: url(../images/homepage/4.jpeg);
 .featured-section .container {
   position: relative;         /* lift the real content above overlay */
   z-index: 1;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Open Sans', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.featured-section h2,
+.featured-section h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    color: #ffffff;
+}
 .featured-section .fact h1,
 .featured-section .fact p,
 .featured-section .counter {  /* makes absolutely everything white    */
-  color: #f1eeee !important;
+  color: #b8cfb3 !important;
 }
 
 .featured-section h2 {
