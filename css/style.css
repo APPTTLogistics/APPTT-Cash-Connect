@@ -469,11 +469,12 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Services Section */
+/* Services Section */
 .services-section {
     padding: 80px 0;
     background-color: #fff;
-    position: relative; /* Needed for absolute positioning of pseudo-element */
-    overflow: hidden; /* Ensures the decorative element doesn't cause scrollbars */
+    position: relative;
+    overflow: hidden;
 }
 
 .services-section:after {
@@ -482,11 +483,11 @@ h1, h2, h3, h4, h5 {
     background-repeat: no-repeat;
     content: "";
     height: 100%;
-    right: 0; /* Changed from left to right for better positioning */
+    right: 0;
     position: absolute;
     top: -12%;
     width: 26%;
-    z-index: 0; /* Ensures it stays behind the content */
+    z-index: 0;
 }
 
 .services-container {
@@ -496,7 +497,7 @@ h1, h2, h3, h4, h5 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative; /* Ensures content stays above the pseudo-element */
+    position: relative;
     z-index: 1;
 }
 
@@ -505,7 +506,9 @@ h1, h2, h3, h4, h5 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
 }
 
 .service-card:hover {
@@ -533,16 +536,49 @@ h1, h2, h3, h4, h5 {
 .card-content p {
     color: var(--medium-gray);
     font-size: 1rem;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 480px) {
-    .services-container, 
-    .blog-container {
-        grid-template-columns: 1fr; /* Single column layout */
+/* Corrected Arrow Styling */
+/* Increased Arrow Icon Size */
+.service-card-arrow {
+    width: 40px;  /* Increased from 24px */
+    height: 40px; /* Increased from 24px */
+    margin: 0 auto 15px; /* Added bottom margin */
+    display: block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card-arrow img {
+    width: 100%; 
+    height: 100%; /* Changed from 'auto' to fill container */
+    object-fit: contain; /* Ensures proper scaling */
+    filter: grayscale(1) contrast(0.8);
+}
+
+.service-card:hover .service-card-arrow img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.2); /* Increased hover scale */
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .services-section:after {
-        display: none; /* Optional: hide decorative element on small screens */
+        display: none;
+    }
+    
+    .service-card {
+        margin-bottom: 20px;
+    }
+    
+    .service-card-arrow {
+        width: 20px;
+        height: 20px;
     }
 }
 /* Journal Section */
