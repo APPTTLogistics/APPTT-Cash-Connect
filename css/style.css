@@ -539,28 +539,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Corrected Arrow Styling */
-.service-card-arrow {
-    width: 24px;
-    height: 24px;
-    margin: 0 auto;
-    display: block;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-}
 
-.service-card-arrow img {
-    width: 100%;
-    height: auto;
-    filter: grayscale(1) contrast(0.8);
-    transition: inherit;
-}
-
-.service-card:hover .service-card-arrow img {
-    filter: grayscale(0) contrast(1);
-    transform: scale(1.1);
-}
 
 @media (max-width: 768px) {
     .services-container {
