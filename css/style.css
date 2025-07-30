@@ -1428,3 +1428,41 @@ background-image: url(../images/homepage/4.jpeg);
         font-size: 16px;
     }
 }
+.card-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.arrow-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #666;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.arrow-circle:hover {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+@media (max-width: 768px) {
+    .card-arrow {
+        padding-bottom: 15px; /* Reduce space on smaller screens */
+    }
+
+    .arrow-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        border-width: 1px;
+    }
+}
