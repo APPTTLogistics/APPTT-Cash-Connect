@@ -582,13 +582,13 @@ h1, h2, h3, h4, h5 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     position: relative;
 }
 
 .blog-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .blog-card::before {
@@ -614,7 +614,6 @@ h1, h2, h3, h4, h5 {
     height: 250px;
     object-fit: cover;
     transition: transform 0.5s ease;
-    position: relative;
 }
 
 .blog-card:hover img {
@@ -641,6 +640,7 @@ h1, h2, h3, h4, h5 {
     color: #2E7D32;
 }
 
+/* Text Clamping with Modern Standards */
 .blog-description {
     color: var(--medium-gray);
     margin-bottom: 15px;
@@ -649,6 +649,9 @@ h1, h2, h3, h4, h5 {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-clamp: 3;
+    box-orient: vertical;
+    max-height: 4.5em;
     transition: all 0.4s ease;
 }
 
@@ -664,6 +667,8 @@ h1, h2, h3, h4, h5 {
 
 .blog-card.expanded .blog-description {
     -webkit-line-clamp: unset;
+    line-clamp: unset;
+    max-height: none;
 }
 
 .blog-card.expanded .more-content {
@@ -711,8 +716,8 @@ h1, h2, h3, h4, h5 {
     animation: pulse-green 2s infinite;
 }
 
-/* Fallback for non-webkit browsers */
-@supports not (-webkit-line-clamp: 3) {
+/* Fallback for browsers without line-clamp support */
+@supports not ((line-clamp: 3) or (-webkit-line-clamp: 3)) {
     .blog-description {
         max-height: 4.5em;
         overflow: hidden;
@@ -733,48 +738,59 @@ h1, h2, h3, h4, h5 {
         display: none;
     }
 }
- @media (max-width: 768px) {
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
     .blog-container {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 0 15px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
     }
 
     .blog-card {
-      border-radius: 8px;
+        border-radius: 8px;
     }
 
     .blog-content {
-      padding: 15px;
+        padding: 15px;
     }
 
     .blog-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
     .blog-description, .more-content {
-      font-size: 0.9rem;
-      line-height: 1.5;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .blog-card img {
-      height: 160px;
+        height: 180px;
     }
 
     .read-more {
-      font-size: 0.85rem;
+        font-size: 0.85rem;
     }
-  }
-
-  /* Animation for better UX */
-  @media (min-width: 769px) {
+    
+    /* Disable hover effects on mobile */
     .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        transform: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-  }
+    
+    .blog-card:hover img {
+        transform: none;
+    }
+}
 
+/* Desktop Hover Effects */
+@media (min-width: 769px) {
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+}
 /* Add this class to any card you want to highlight */
 .featured::after {
     content: 'NEW';
