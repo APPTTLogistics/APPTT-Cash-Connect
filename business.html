@@ -115,20 +115,43 @@
 }
 
 /* Navigation links - always visible on desktop */
+/* Navigation links */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 8px 0;
 }
 
+.nav-links li a:hover {
+    color: #1ec588;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1ec588;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
 /* Hamburger icon - hidden on desktop */
 .hamburger {
   display: none;
