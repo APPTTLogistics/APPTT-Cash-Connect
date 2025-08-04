@@ -967,42 +967,35 @@ h1, h2, h3, h4, h5 {
     50% { transform: translate(-50%, -50%) scale(1.5); }
     100% { transform: translate(-50%, -50%) scale(1); }
 }
-
-@media (max-width: 768px) {
-    .timeline-content-box {
-        width: 220px;
-        min-height: 100px;
-    }
-    
-    .timeline-content-box.top {
-        top: -220px;
-    }
-    
-    .timeline-content-box.bottom {
-        bottom: -220px;
-    }
-}
-
 @media (max-width: 576px) {
     .timeline-content-box {
-        width: 160px;
-        min-height: 90px;
-        padding: 10px;
+        width: 90%;
+        min-height: 160px;
+        right: auto;
+        left: 5%;
+        padding: 15px;
+        box-sizing: border-box;
     }
-    
+
     .timeline-content-box.top {
-        top: -220px;
+        top: -180px;
     }
-    
+
     .timeline-content-box.bottom {
-        bottom: -220px;
+        bottom: -180px;
     }
-    
+
+    .content-text {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
     .timeline-container {
-        padding: 80px 15px;
+        padding: 100px 15px;
         margin: 60px auto;
     }
 }
+
 /* Clients Section */
 .slider-container {
   width: 100%;
