@@ -969,8 +969,8 @@ h1, h2, h3, h4, h5 {
 }
 @media (max-width: 576px) {
     .timeline-content-box {
-        width: 90%;
-        min-height: 160px;
+        max-width: 140px;
+        min-height: 30px;
         right: auto;
         left: 5%;
         padding: 15px;
@@ -982,16 +982,16 @@ h1, h2, h3, h4, h5 {
     }
 
     .timeline-content-box.bottom {
-        bottom: -180px;
+        bottom: -190px;
     }
 
     .content-text {
-        font-size: 12px;
+        font-size: 9px;
         line-height: 1.5;
     }
 
     .timeline-container {
-        padding: 100px 15px;
+        padding: 140px 15px;
         margin: 60px auto;
     }
 }
