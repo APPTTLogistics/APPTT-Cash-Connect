@@ -809,7 +809,7 @@ h1, h2, h3, h4, h5 {
 
 .timeline-container {
     position: relative;
-    padding: 240px 120px;
+    padding: 180px 120px;
     /* Ensure enough space for boxes */
     margin: 80px auto;
     overflow: visible; /* Changed from hidden */
