@@ -1040,18 +1040,42 @@ h1, h2, h3, h4, h5 {
 .iso-section {
   background-color: #ffffff;  
   text-align: center;          
-  padding: 60px 20px;          
+  padding: 60px 20px;          /* Default padding for desktop */
 }
 
 .iso-section img {
-  max-width: 400px;            /* Adjust size (responsive below 400px) */
-  width: 100%;                 /* Scale for small screens */
-  height: auto;                 /* Keep aspect ratio */
-  margin-top: 20px;             /* Space above image */
-  border: 2px solid #ddd;       /* Optional border */
-  border-radius: 10px;          /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  max-width: 400px;            /* Desktop max size */
+  width: 100%;                 /* Scale for smaller screens */
+  height: auto;                 /* Maintain aspect ratio */
+  margin-top: 20px;            
+  border: 2px solid #ddd;      
+  border-radius: 10px;         
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .iso-section {
+    padding: 40px 15px;       /* Less padding on mobile */
+  }
+
+  .iso-section img {
+    max-width: 100%;           /* Ensure image fits smaller screens */
+    margin-top: 15px;          /* Slightly less top margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .iso-section {
+    padding: 30px 10px;       /* Even smaller padding for phones */
+  }
+
+  .iso-section img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+}
+
 
 /* Facts Section */
 .featured-section {
