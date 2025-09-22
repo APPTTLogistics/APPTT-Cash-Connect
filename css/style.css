@@ -1038,9 +1038,9 @@ h1, h2, h3, h4, h5 {
   }
 }
 .iso-section {
-  background-color: #ffffff;   /* White background */
-  text-align: center;          /* Center align text and image */
-  padding: 60px 20px;          /* Spacing inside section */
+  background-color: #ffffff;  
+  text-align: center;          
+  padding: 60px 20px;          
 }
 
 .iso-section img {
