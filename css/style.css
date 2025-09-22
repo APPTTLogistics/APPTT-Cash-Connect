@@ -13,6 +13,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
    font-family: 'Outfit', sans-serif;
@@ -1032,6 +1036,21 @@ h1, h2, h3, h4, h5 {
   100% {
     transform: translateX(-60%);
   }
+}
+.iso-section {
+  background-color: #ffffff;   /* White background */
+  text-align: center;          /* Center align text and image */
+  padding: 60px 20px;          /* Spacing inside section */
+}
+
+.iso-section img {
+  max-width: 400px;            /* Adjust size (responsive below 400px) */
+  width: 100%;                 /* Scale for small screens */
+  height: auto;                 /* Keep aspect ratio */
+  margin-top: 20px;             /* Space above image */
+  border: 2px solid #ddd;       /* Optional border */
+  border-radius: 10px;          /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 /* Facts Section */
